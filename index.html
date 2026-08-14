@@ -74,6 +74,22 @@
     font-size: 12px;
     color: #475569;
   }
+  #qrWrap {
+    display: none;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  #qrWrap p {
+    margin-bottom: 14px;
+  }
+  #qrcode {
+    display: inline-block;
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    line-height: 0;
+  }
 </style>
 </head>
 <body>
@@ -85,6 +101,11 @@
 
     <a class="btn android" id="androidBtn" href="https://play.google.com/store/apps/details?id=com.kp.remotejobnepal">Get it on Google Play</a>
     <a class="btn ios" id="iosBtn" href="https://apps.apple.com/np/app/remote-job-nepal/id6760401983">Download on the App Store</a>
+
+    <div id="qrWrap">
+      <p>Or scan with your phone's camera:</p>
+      <img id="qrcode" src="data:image/png;base64,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" width="160" height="160" alt="QR code">
+    </div>
 
     <div class="footer">Remote Job Nepal</div>
   </div>
@@ -108,9 +129,14 @@
       document.getElementById("msg").textContent = "Redirecting to the App Store...";
       window.location.replace(APP_STORE_URL);
     } else {
+      // Desktop or unrecognized device: show manual buttons + a QR code
+      // pointing back to this same page, so a phone can scan it and
+      // get auto-redirected to the correct store.
       document.getElementById("spinner").style.display = "none";
       document.getElementById("title").textContent = "Get Remote Job Nepal";
-      document.getElementById("msg").textContent = "Choose your platform:";
+      document.getElementById("msg").textContent = "Choose your platform, or scan below:";
+
+      document.getElementById("qrWrap").style.display = "block";
     }
   </script>
 </body>
